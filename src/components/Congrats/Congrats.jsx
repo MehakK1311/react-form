@@ -19,7 +19,10 @@ function Congrats() {
       </div>
       <img src={image} alt=" " />
       <div className="data">
-        Name: {values.fullName}
+        <span className="values">Full Name: {values.fullName}</span>
+        <span className="values">Registeration number: {values.regNo}</span>
+        <span className="values">Contact Number: {values.contact}</span>
+        <span className="values">Email Id: {values.email}</span>
       </div>
     </div>
   );
