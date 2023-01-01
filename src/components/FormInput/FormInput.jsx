@@ -5,7 +5,7 @@ const FormInput = (props) => {
   return (
     <div>
       <label>{label}</label>
-      <input {...inputProps} onChange={onChange}/>
+      <input className="formInput" {...inputProps} onChange={onChange}/>
     </div>
   );
 };
