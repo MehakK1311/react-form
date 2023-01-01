@@ -3,13 +3,7 @@ body {
   --button-color: rgb(22, 66, 177);
   --button-text-color: #fff;
 
-  background: linear-gradient(
-    rgba(31, 95, 233, 0.882),
-    rgba(18, 45, 104, 0.882)
-  );
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
+  
 }
 
 .container {
