@@ -13,6 +13,9 @@ function Congrats() {
                 You have successfully submitted the form. 
             </p>
         </div>
+        <div className="button">
+            <button>Go Back</button>
+        </div>
     </div>
   )
 }
