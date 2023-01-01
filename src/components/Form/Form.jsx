@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "./form.css";
 import FormInput from "../FormInput/FormInput";
+import {WebcamCapture} from "../Webcam/Webcam";
 
 function Form() {
   const [values, setValues] = useState({
@@ -70,6 +71,7 @@ function Form() {
   return (
     <div className="container">
       <form onSubmit={handleSubmit}>
+        <WebcamCapture/>
         {inputs.map((input) => {
           return <FormInput
             key={input.id}
