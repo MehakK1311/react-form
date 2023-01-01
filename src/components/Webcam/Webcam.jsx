@@ -21,7 +21,7 @@ export const WebcamCapture = () => {
   return (
     <div className="webcam-container">
       <div className="webcam-img">
-        {image == "" ? (
+        {image === "" ? (
           <Webcam
             audio={false}
             height={300}
@@ -30,11 +30,11 @@ export const WebcamCapture = () => {
             videoConstraints={videoConstraints}
           />
         ) : (
-          <img src={image} />
+          <img src={image} alt =" "/>
         )}
       </div>
       <div>
-        {image != "" ? (
+        {image !== "" ? (
           <button
             onClick={(e) => {
               e.preventDefault();
