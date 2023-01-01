@@ -1,5 +1,4 @@
 import Form from "./components/Form/Form";
-import "./app.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Congrats from "./components/Congrats/Congrats";
 
