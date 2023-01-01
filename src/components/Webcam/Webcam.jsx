@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import Webcam from "react-webcam";
 
-
 const videoConstraints = {
   width: 300,
   height: 200,
@@ -12,11 +11,11 @@ export const WebcamCapture = () => {
   const [image, setImage] = useState("");
   const webcamRef = React.useRef(null);
 
-  const capture = React.useCallback(() => {
+  const capture = () => {
     const imageSrc = webcamRef.current.getScreenshot();
     setImage(imageSrc);
-    localStorage.setItem("image",imageSrc);
-  });
+    localStorage.setItem("image", imageSrc);
+  };
 
   return (
     <div className="webcam-container">
@@ -30,7 +29,7 @@ export const WebcamCapture = () => {
             videoConstraints={videoConstraints}
           />
         ) : (
-          <img src={image} alt =" "/>
+          <img src={image} alt=" " />
         )}
       </div>
       <div>
