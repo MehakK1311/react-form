@@ -16,6 +16,7 @@ function Congrats() {
         <div className="button">
             <button>Go Back</button>
         </div>
+        <img  src={image}/>
     </div>
   )
 }

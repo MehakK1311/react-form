@@ -1,10 +1,10 @@
-body {
-  --msg-color: #000;
+body{
+    --msg-color: #000;
 }
 .msg {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-}
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
