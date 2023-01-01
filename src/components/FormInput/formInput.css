@@ -19,7 +19,7 @@ label{
 
 .error{
     font-size: 12px;
-    padding: 3px;
+    margin-bottom: 20px;
     color: red;
     display: none;
 }

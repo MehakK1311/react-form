@@ -1,17 +1,17 @@
 import { useState } from "react";
 import "./form.css";
 import FormInput from "../FormInput/FormInput";
-import {WebcamCapture} from "../Webcam/Webcam";
+import { WebcamCapture } from "../Webcam/Webcam";
+import { useNavigate } from "react-router-dom";
 
 function Form() {
+  const navigate = useNavigate();
+
   const [values, setValues] = useState({
     fullName: "",
-    appNo: "",
     regNo: "",
     contact: "",
     email: "",
-    gender: "",
-    blood: "",
     address: "",
   });
 
@@ -41,7 +41,7 @@ function Form() {
       name: "contact",
       type: "text",
       placeholder: "Contact Number",
-      errorMsg: "",
+      errorMsg: "invalid",
       label: "Contact Number",
       pattern: "[1-9]{1}[0-9]{9}",
       required: true,
@@ -53,7 +53,7 @@ function Form() {
       placeholder: "Email Id",
       errorMsg: "NOTE: only VIT mail id accepted",
       label: "Email Id",
-      pattern: "^[a-zA-Z0-9.$+-]+@vitstudent\\\.ac\\\.in$",
+      pattern: "^[a-zA-Z0-9.$+-]+@vitstudent\\.ac\\.in$",
       required: true,
     },
     {
@@ -69,6 +69,19 @@ function Form() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    localStorage.setItem("data", JSON.stringify(values));
+    navigate("/submit");
+  };
+
+  const reset = (e) => {
+    e.preventDefault();
+    setValues({
+      fullName: "",
+      regNo: "",
+      contact: "",
+      email: "",
+      address: "",
+    });
   };
 
   const onChange = (e) => {
@@ -78,17 +91,19 @@ function Form() {
   return (
     <div className="container">
       <form onSubmit={handleSubmit}>
-        <WebcamCapture/>
+        <WebcamCapture />
         {inputs.map((input) => {
-          return <FormInput
-            key={input.id}
-            {...input}
-            value={values[input.name]}
-            onChange={onChange}
-          />;
+          return (
+            <FormInput
+              key={input.id}
+              {...input}
+              value={values[input.name]}
+              onChange={onChange}
+            />
+          );
         })}
-
         <button>Submit</button>
+        <button onClick={reset}>Reset</button>
       </form>
     </div>
   );

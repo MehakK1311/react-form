@@ -1,9 +1,6 @@
 body {
-  --form-background-color: #fff;
   --button-color: rgb(22, 66, 177);
   --button-text-color: #fff;
-
-  
 }
 
 .container {
@@ -11,12 +8,11 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
 }
 form {
-  background-color: var(--form-background-color);
   padding: 10px 60px;
   border-radius: 10px;
+  margin-top: 10em;
   left: 50%;
   top: 50%;
   position: absolute;
